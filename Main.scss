@@ -1,6 +1,10 @@
 @import "ScssConfig/mixins";
 @import "ScssConfig/config";
 @import "ScssConfig/constants";
-// Imported Files
+
+// Import Bootstrap
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+// Import Custom Files
 @import "Scss/addyourfilehere";
 @import "Scss/importthefileinmain";

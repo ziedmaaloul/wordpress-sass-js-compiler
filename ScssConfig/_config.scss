@@ -1,0 +1,29 @@
+$breakpoints: (
+  mobilebig: 'only screen and (min-width: #{em(500px)})',
+  tablet: 'only screen and (min-width: #{em(768px)})',
+  tabletbig: 'only screen and (min-width: #{em(950px)})',
+  desktop: 'print, only screen and (min-width: #{em(1024px)})',
+  xl: 'print, only screen and (min-width: #{em(1200px)})',
+  xxl: 'print, only screen and (min-width: #{em(1440px)})',
+  print: 'print',
+  dark: 'only screen and (prefers-color-scheme: dark)',
+  reduced-motion: 'only screen and (prefers-reduced-motion: reduce)',
+);
+
+$bg-grey-color : #abb8c3;
+$bg-color :#dfdfdf;
+$border-color: rgba(0,0,0,.08);
+$background-color: var(--mfn-offer-thumbs-nav);
+$black-color: #000;
+$blue-color : $background-color;
+$white-green : #ADF1D2;
+$white: #FFF;
+$blue-color-bg : #3C43ED;
+$white-text: #F5F5F5;
+$bg-button: #CFF6E4;
+$primary-color: #120739;
+$color-white: #FFF;
+$form-bg-black: #36383d;
+$yellow-circle : #dfff00;
+$text: #7288a2;
+$lightgray: #e5e5e5;

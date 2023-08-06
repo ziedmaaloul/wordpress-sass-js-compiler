@@ -1,0 +1,27 @@
+%image-container {
+    border: 4px solid;
+    width: 213px;
+    text-align: center;
+    border-radius: 23px;
+
+    > img {
+        max-width: 169px;
+        max-height: 166px;
+    }
+}
+%text-white-with-bg-blue {
+    border: 3px $blue-color-bg solid;
+    background-color: $blue-color-bg;
+    border-radius: 10px;
+    padding: 2px 5px;
+    color: $color-white;
+    font-weight: bold;
+}
+%service-wieghts-container-and-sub {
+    display: flex;
+
+    > .el-weight {
+        margin-left: 7px;
+        @extend %text-white-with-bg-blue;
+    }
+}

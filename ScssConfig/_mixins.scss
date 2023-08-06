@@ -1,0 +1,48 @@
+@mixin mq($type, $inverse: false) {
+    @if map-has-key($breakpoints, $type) {
+        $list: map-get($breakpoints, $type);
+
+        @if $inverse {
+            $list: explode($list, ",", comma);
+
+            @for $i from 1 through length($list) {
+                $mq: nth($list, $i);
+                $index: str-index($mq, "only");
+
+                @if $index {
+                    // replace the 'only' keyword with 'not'
+                    $mq: "not#{str-slice($mq, $index + 4)}";
+                } @else {
+                    // prepend the 'not' keyword
+                    $mq: "not #{$mq}";
+                }
+
+                $list: set-nth($list, $i, $mq);
+            }
+        }
+
+        @media #{$list} {
+            @content;
+        }
+    } @else {
+        @error 'Unknown breakpoint #{$type}!';
+    }
+}
+
+@function em($size) {
+    @if not unitless($size) {
+        // we already have em
+        @if unit($size) == em {
+            @return $size;
+        }
+
+        // handle percentage
+        @if unit($size) == '%' {
+            @return 1em * ($size / 100%);
+        }
+
+        @return ((0px + $size) / 16px * 1em); // stylelint-disable-line length-zero-no-unit
+    }
+
+    @return 0;
+}
